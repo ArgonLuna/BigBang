@@ -12,7 +12,7 @@ local standardConfig = {
 }
 local config = standardConfig
 if fs.exists(".bigbang") then
-  local handle = fs.open(".bigbang", "w")
+  local handle = fs.open(".bigbang", "r")
   local content = handle.readAll()
   handle.close()
   config = loadstring("return " .. content)()

@@ -11,7 +11,7 @@ standardConfig =
 config = standardConfig
 
 if fs.exists ".bigbang"
-  handle = fs.open ".bigbang", "w"
+  handle = fs.open ".bigbang", "r"
   content = handle.readAll!
   handle.close!
   config = loadstring("return " .. content)()
@@ -29,5 +29,5 @@ _G.printError = ->
     printError err
     os.pullEvent "key"
     dofile config.rescueScript
-    
+
 os.queueEvent "modem_message", 0
